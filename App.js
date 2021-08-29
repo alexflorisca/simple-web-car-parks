@@ -15,21 +15,6 @@ export default function App() {
   const [isError, setError] = useState(false);
   const [isLoading, setLoading] = useState(true);
 
-  function getCarParksApiUrl({
-    filterParkAndRide, 
-    filterElectricChargePoint
-  }) {
-      let url = `${API_URL}?page=1`
-      if(filterElectricChargePoint) {
-        url += `&filters%5Belectric_car_charge_point%5D=true`;
-      }
-      if(filterParkAndRide) {
-        url += `&filters%5Bpark_and_ride%5D=true`;
-      }
-
-      return url;
-  }
-
   function getCarParks(url, filters) {
     if (!API_URL || !API_KEY) {
       throw new Error('Missing API_URL or API_KEY');
@@ -68,6 +53,21 @@ export default function App() {
       <Pagination isLoading={isLoading} isError={isError} pageLinks={pageLinks} getCarParks={getCarParks} />
     </View>
   );
+}
+
+function getCarParksApiUrl({
+  filterParkAndRide, 
+  filterElectricChargePoint
+}) {
+    let url = `${API_URL}?page=1`
+    if(filterElectricChargePoint) {
+      url += `&filters%5Belectric_car_charge_point%5D=true`;
+    }
+    if(filterParkAndRide) {
+      url += `&filters%5Bpark_and_ride%5D=true`;
+    }
+
+    return url;
 }
 
 const styles = StyleSheet.create({

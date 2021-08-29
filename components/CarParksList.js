@@ -9,6 +9,7 @@ import {
 export default function CarParksList(props) {
 	const { isError, isLoading, carParks } = props;
   if (isLoading && !isError) {
+		// This isn't showing on Android but does in web view for some reason.
 		return <ActivityIndicator style={styles.loading} />
 	}
 
