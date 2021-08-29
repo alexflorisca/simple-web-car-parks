@@ -21,7 +21,7 @@ export default function Pagination(props) {
     data={pageLinks}
     renderItem={({ item }) => (
       <Pressable style={styles.pageItem} onPress={() => item.url !== null && getCarParks(item.url)}>
-        <Text>{decode(item.label)}</Text>
+        <Text accessibilityLabel={`Page ${decode(item.label)}`}>{decode(item.label)}</Text>
       </Pressable>
     )}
     style={styles.pagination}

@@ -21,6 +21,7 @@ export default function Filters(props) {
 					});
 				}}
 				color={ filterParkAndRide ? '#2196F3' : '#8fcaf9'}
+				accessibilityLabel="Filter by Park and Ride"
 				 />
 		</View>
 		<View style={styles.filterElectricChargePoint}>
@@ -34,6 +35,7 @@ export default function Filters(props) {
 					});
 				}}
 				color={ filterElectricChargePoint ? '#2196F3' : '#8fcaf9'}
+				accessibilityLabel="Filter by Electric Charge Point"
 				 />
 		</View>
 	</View>)
